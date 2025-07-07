@@ -3,3 +3,17 @@
 This repository goes over a variaty of statistical methods to gain a deeper understanding of Chess
 
 # Overview
+
+#Summary 
+
+## Data
+
+## Problem Formulation
+
+## Training
+
+## Perfomance
+
+## Conclusions
+
+## Future Plans
