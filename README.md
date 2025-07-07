@@ -28,11 +28,12 @@ There are many statistical methods that can be used, in this project, I used Log
 - ## Visualization
 This is a histogram showing the distribution of the elo among white players, it's important to look at graphs like these to get a better understanding of the data. For example, this graphs shows the distribution is normal for the elo ratings of those who play white.
 
-  ![image](https://github.com/user-attachments/assets/6777e149-5764-47ec-be94-1f3ea7f76712)
+![image](https://github.com/user-attachments/assets/6777e149-5764-47ec-be94-1f3ea7f76712)
 
-When looking for important features, I used this graph to determine that seperating between white and black players could be an important item to look at
+When looking for important features, I used this graph to determine that seperating between white and black players could be an important item to look at. There was a big differnce in runtime. These graphs took about 50 minutes to create.
 
-  ![image](https://github.com/user-attachments/assets/3270a8bd-e09a-4cbb-98a6-0aee31396ccc)
+![image](https://github.com/user-attachments/assets/f8a784d8-d422-4968-b302-6015f616ec71)
+
 
 Trying to get some final understanding, this graph gave some insight on the probability of winning based on differnce in elo.
 
@@ -44,8 +45,11 @@ This graph is interesting, most of it makes sense, but on the far right things g
 - With different goals, I had different inputs and outputs, however, in general, the elo of each player, event type, results, and cause of termination, was used to get results. Linear regression was used test the predictive power of elo, as well as to find the odds of winning based off the Elogap between players, seperated into white and black. The one sample t-test was used to see if playing white or black had a significant difference. In regards to predictive modeling, linear regression was used as a baseline,and XGBoost and Gradient Boosting was used due to the potential complexity of the prediction. Originally, only 100,000 rows were used to create the model. With this, hypertuning was used. Hypertuning with XGboost seemed to produce worse and worse results, likely due to the complexity of the model. However, gradient boosting proved to be a bit better after some tuning. 
   
 ## Training
--Software: Juypter Notebook
-
+-Software: Juypter Notebook, Python 3, StandardScalar, LinearRegression, XGboost, GradientBoosting, RandomizedSearchCV
+WhiteRatingDiff Linear Regression Results:
+  RMSE: 18.07
+  MAE: 5.30
+  R²: 0.353
 ## Perfomance
 
 ## Conclusions
