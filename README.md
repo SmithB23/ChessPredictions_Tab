@@ -71,3 +71,9 @@ Gradient Boosting ended up being the best model within my project. With a R^2 va
 
 ## Future Plans
 There are many directions and new ideas that could be incorporated. Before moving to new goals and projects, getting rid of outliers and more feature engineering would improve this model. In regards to new ideas, it would be interesting to try and detect the cheaters or smurfs that seemed to cause the inconsistances I was talking about. You could also get more precisice and instead of finding a probablity based on the general differnce in elo, you could try to predict the possibilty of each player winning. You could use this dataset for the later as there are many repeat names, and we have hundreds of games for indivdiual players. This project could defintly be improved with more time. I plan to put some more time into it. I believe I can take this much farther.
+
+# Downloading Data
+There is only one notebook and one csv file. To download the chess_games.csv vile, you can go to https://www.kaggle.com/datasets/arevel/chess-games and use the Kaggle API.
+
+# Notebook 
+The ChessPredictions_Pro.ipynb file holds everything I did. You can choose to run the data with 100,000 data points or all 6 million based on what your goals and abilities are.
