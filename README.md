@@ -9,7 +9,7 @@ This repository goes over a variaty of statistical methods to gain a deeper unde
   - Find the probabilty of winning based off the differnce in elo rating
   
 There are many statistical methods that can be used, in this project, I used Logistic Regression, and One-sample t-test. For the first goal, we had a coefficient of 0.00455(for every point increase in the elo gap, the odds of winning increase by this amount) with an AUCof .693, so the elo gap is better than guessing. For determinig the signigicane of white vs black using the t-test, we got a p-value of 0.97941 at a 95% confidence interval. 
-- *Predictive Goals*: The goal was to predict the amount of elo a person would win or lose each game. The data was seperated to show a differnce between white and black players and Gradient Boosting was the model of choice. The model was able to accuratly predict the amount a Elo Differnce of a player 68.4% of the time. The probabilty of winning based off the differnce in elo rating suprisingly varied widely.
+- *Predictive Goals*: The goal was to predict the amount of elo a person would win or lose each game. The data was seperated to show a differnce between white and black players and Gradient Boosting was the model of choice. The model was able to accuratly predict the amount a Elo Differnce of a player 72.5% of the time. The probabilty of winning based off the differnce in elo rating suprisingly varied widely.
 
 # Summary 
 
@@ -48,7 +48,7 @@ This graph is interesting, most of it makes sense, but on the far right things g
 - Software: Juypter Notebook, Python 3, StandardScalar, LinearRegression, XGboost, GradientBoosting, RandomizedSearchCV
 - I used Random Search to try and find the best hyperparameters. With 100,000 data points, the training for each model, XGBoost, and Gradient boosting took a couple minutes, increasing a realtivly small amount when increasing n_estimators by a couple hundred.
 - The increase in performance decreased pretty rapidly after using the RandomizedSearch.
-- While using 100,000 points was quite doable, using all 6 million points proved to be a bigger challange for my laptop. I tried removing columns before hand to prevent crashing, but the speed of the model was severly sacrificed to try and use the entire dataset.
+- While using 100,000 points was quite doable, using all 6 million points proved to be a bigger challange for my laptop. I tried removing columns before hand to prevent crashing, but the speed of the model was severly sacrificed to try and use the entire dataset. In the end, gradient boosting took about 35 minutes.
 
 ## Perfomance
 - *Statisitcal Performance*:
@@ -58,8 +58,16 @@ This graph is interesting, most of it makes sense, but on the far right things g
 - *Model Performance*:
     - Linear Regression had a R^2 value of 0.353. The poor results make sense becuase this is not a simple problem, requiring more complex models.
     - XGBoost had a R^2 value of .614 after hypertuning and .609 before. This was honestly really surprising and I was expexting a much better performance. The insignificant increase after hypertuning leads me to beleive that I did something wrong.
-    - Gradient Boosting had the best R^2 value with a score of 0.684. Again, I was expecting higher, but the performance was better than the XGBoost based on my results.
+    - Gradient Boosting had the best R^2 value with a score of 0.725. Again, I was expecting higher, but the performance was better than the XGBoost based on my results.
 
 ## Conclusions
+There are a few conclusions that can be made based off of my results. We can say that having a high elo rating doesn't mean you are going to win more. This makes sense because as your elo increases, you will go against people that suit your level.
+
+An interesting conclusion that I wasn't entirely expecting, with a p-value of .97941 on our t-test, we were able to determine that there is not a significant differnce in the chances to win based off of playing white vs black. While maybe at the higher level, one has a advantage, for the average population, it seems the advantage is too small to be taken advantage of. This is inline with what is expected however, because it is said that a perfect game of chess will always result in a tie.
+
+Regarding the probabilty of winning based on the differnce in elo, we can come to a few conclusions. Overall, we can say that if your elo rating is over 1,000 less than your opponent, your chances of winning approach zero. However, we can see that there are people that cheat and smurf, resulting in some inconsistancies. We can get more conclusive evidence by removing these outliers.
+
+Gradient Boosting ended up being the best model within my project. With a R^2 value of.0725, we are able to capture most of the variance in regards to the amount a players elo will changed based on whether they win or lose. In the end I am happy with this, but I believe more feature engineering could increase performance.
 
 ## Future Plans
+There are many directions and new ideas that could be incorporated. Before moving to new goals and projects, getting rid of outliers and more feature engineering would improve this model. In regards to new ideas, it would be interesting to try and detect the cheaters or smurfs that seemed to cause the inconsistances I was talking about. You could also get more precisice and instead of finding a probablity based on the general differnce in elo, you could try to predict the possibilty of each player winning. You could use this dataset for the later as there are many repeat names, and we have hundreds of games for indivdiual players. This project could defintly be improved with more time. I plan to put some more time into it. I believe I can take this much farther.
