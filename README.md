@@ -37,6 +37,7 @@ When looking for important features, I used this graph to determine that seperat
 Trying to get some final understanding, this graph gave some insight on the probability of winning based on differnce in elo.
 
 ![image](https://github.com/user-attachments/assets/9623104c-9eba-441f-a829-09cca02f43fa)
+
 This graph is interesting, most of it makes sense, but on the far right things get funky. This can most likely be explained by those who cheat, or smurf(really good players that play at an elo rating much lower than their true skill), causing the sudden drop.
 
 ## Problem Formulation
