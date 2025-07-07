@@ -8,11 +8,13 @@ This repository goes over a variaty of statistical methods to gain a deeper unde
   - Determine the significance to playing white vs black
   - Find the probabilty of winning based off the differnce in elo rating
   
-There are many statistical methods that can be used, in this project, I used Logistic Regression, and One-sample t-test. For the first goal, we had a coefficient of 0.00455(for every point increase in the elo gap, the odds of winning increase by this amount) with an AUCof .693, so the elo gap is better than guessing. For determinig the signigicane of white vs black using the t-test, we got a p-value of 0.97941. 
-- *Predictive Goals*: The goal as to predict the amount of elo a person would win or lose each game. The data was seperated to show a differnce between white and black players and Gradient Boosting was the model of choice. The model was able to accuratly predict the amount a Elo Differnce of a player 68.4% of the time,
-#Summary 
+There are many statistical methods that can be used, in this project, I used Logistic Regression, and One-sample t-test. For the first goal, we had a coefficient of 0.00455(for every point increase in the elo gap, the odds of winning increase by this amount) with an AUCof .693, so the elo gap is better than guessing. For determinig the signigicane of white vs black using the t-test, we got a p-value of 0.97941 at a 95% confidence interval. 
+- *Predictive Goals*: The goal was to predict the amount of elo a person would win or lose each game. The data was seperated to show a differnce between white and black players and Gradient Boosting was the model of choice. The model was able to accuratly predict the amount a Elo Differnce of a player 68.4% of the time. The probabilty of winning based off the differnce in elo rating suprisingly varied widely.
 
-## Data
+# Summary 
+
+- ## Data
+
 -6,256,184 x 15
 ## Problem Formulation
 
