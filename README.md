@@ -48,11 +48,17 @@ This graph is interesting, most of it makes sense, but on the far right things g
 - Software: Juypter Notebook, Python 3, StandardScalar, LinearRegression, XGboost, GradientBoosting, RandomizedSearchCV
 - I used Random Search to try and find the best hyperparameters. With 100,000 data points, the training for each model, XGBoost, and Gradient boosting took a couple minutes, increasing a realtivly small amount when increasing n_estimators by a couple hundred.
 - The increase in performance decreased pretty rapidly after using the RandomizedSearch.
-- While using 100,000 points was quite doable, using all 6 million points provedtobe a bigger challange for my laptop. I tried removing columns before hand to prevent crashing, but the speed of the model was severly sacrificed to try and use the entire dataset.
+- While using 100,000 points was quite doable, using all 6 million points proved to be a bigger challange for my laptop. I tried removing columns before hand to prevent crashing, but the speed of the model was severly sacrificed to try and use the entire dataset.
 
 ## Perfomance
 - *Statisitcal Performance*:
+    - For determine the chance of winning based on the elo gap, we got an AUC of 0.693, so better than guessing but not the best. Linear regression determined that there was a positive correlation of the chances of winnig based off the increase in elo gap. For every one increase in elo gap, the chance of winning increase by 0.00455.
+    - The results on whether or not there was a significance in playing white vs black was interesting. Using t-test, we got a p-value of 0.97941 at the 95% confidence level.
+    - Upon looking at the graph showing the probability of winning based on differnce in elo, we can see that there are some problems. It would require more cleaning to resolve the issue surrounding those with much lower elos beating those with much higher elos. This is most likely the result of cheaters or those who pretend to be a lower level than they actually are.
 - *Model Performance*:
+    - Linear Regression had a R^2 value of 0.353. The poor results make sense becuase this is not a simple problem, requiring more complex models.
+    - XGBoost had a R^2 value of .614 after hypertuning and .609 before. This was honestly really surprising and I was expexting a much better performance. The insignificant increase after hypertuning leads me to beleive that I did something wrong.
+    - Gradient Boosting had the best R^2 value with a score of 0.684. Again, I was expecting higher, but the performance was better than the XGBoost based on my results.
 
 ## Conclusions
 
