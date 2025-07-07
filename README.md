@@ -45,12 +45,14 @@ This graph is interesting, most of it makes sense, but on the far right things g
 - With different goals, I had different inputs and outputs, however, in general, the elo of each player, event type, results, and cause of termination, was used to get results. Linear regression was used test the predictive power of elo, as well as to find the odds of winning based off the Elogap between players, seperated into white and black. The one sample t-test was used to see if playing white or black had a significant difference. In regards to predictive modeling, linear regression was used as a baseline,and XGBoost and Gradient Boosting was used due to the potential complexity of the prediction. Originally, only 100,000 rows were used to create the model. With this, hypertuning was used. Hypertuning with XGboost seemed to produce worse and worse results, likely due to the complexity of the model. However, gradient boosting proved to be a bit better after some tuning. 
   
 ## Training
--Software: Juypter Notebook, Python 3, StandardScalar, LinearRegression, XGboost, GradientBoosting, RandomizedSearchCV
-WhiteRatingDiff Linear Regression Results:
-  RMSE: 18.07
-  MAE: 5.30
-  R²: 0.353
+- Software: Juypter Notebook, Python 3, StandardScalar, LinearRegression, XGboost, GradientBoosting, RandomizedSearchCV
+- I used Random Search to try and find the best hyperparameters. With 100,000 data points, the training for each model, XGBoost, and Gradient boosting took a couple minutes, increasing a realtivly small amount when increasing n_estimators by a couple hundred.
+- The increase in performance decreased pretty rapidly after using the RandomizedSearch.
+- While using 100,000 points was quite doable, using all 6 million points provedtobe a bigger challange for my laptop. I tried removing columns before hand to prevent crashing, but the speed of the model was severly sacrificed to try and use the entire dataset.
+
 ## Perfomance
+- *Statisitcal Performance*:
+- *Model Performance*:
 
 ## Conclusions
 
